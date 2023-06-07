@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class FirstApp extends StatelessWidget {
   const FirstApp({super.key});
@@ -22,7 +20,7 @@ class FirstApp extends StatelessWidget {
                 )
               ],
             ),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(

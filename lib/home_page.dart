@@ -2,17 +2,15 @@ import 'package:back_end/other.dart';
 import 'package:back_end/dog.dart';
 import 'package:back_end/homep.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
-class homePage extends StatefulWidget {
-  const homePage({super.key});
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
   @override
-  State<homePage> createState() => _homePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _homePageState extends State<homePage> {
+class _HomePageState extends State<HomePage> {
   int _selectIndex = 0;
   void _navigateBottomNavibar(int index) {
     setState(() {
@@ -20,7 +18,7 @@ class _homePageState extends State<homePage> {
     });
   }
 
-  final List<Widget> _tapList = [home(), dog(), other()];
+  final List<Widget> _tapList = [const Home(), const Dog(), const Other()];
 
   @override
   Widget build(BuildContext context) {
@@ -31,15 +29,15 @@ class _homePageState extends State<homePage> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 3),
           child: Align(
-            alignment: Alignment(0.0, 1.0),
+            alignment: const Alignment(0.0, 1.0),
             child: ClipRRect(
-              borderRadius: BorderRadius.all(
+              borderRadius: const BorderRadius.all(
                 Radius.circular(50),
               ),
               child: BottomNavigationBar(
                 showSelectedLabels: true,
                 showUnselectedLabels: false,
-                backgroundColor: Color.fromRGBO(240, 239, 239, 1),
+                backgroundColor: const Color.fromRGBO(240, 239, 239, 1),
                 onTap: (int index) {
                   setState(() {
                     _selectIndex = index;

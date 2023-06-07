@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:back_end/first.dart';
 import 'package:back_end/home_page.dart';
 import 'package:back_end/input_dog.dart';
+
 import 'package:back_end/login.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
           textTheme: GoogleFonts.kanitTextTheme(
         Theme.of(context).textTheme,
       )),
-      home: inputDog(),
+      home: const HomePage(),
     );
   }
 }

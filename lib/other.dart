@@ -1,19 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:back_end/homep.dart';
 
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-
-class other extends StatelessWidget {
-  const other({super.key});
+class Other extends StatelessWidget {
+  const Other({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(248, 247, 247, 1),
+      backgroundColor: const Color.fromRGBO(248, 247, 247, 1),
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(83, 129, 36, 1),
-        title: Row(
+        backgroundColor: const Color.fromRGBO(83, 129, 36, 1),
+        title: const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
@@ -29,7 +25,7 @@ class other extends StatelessWidget {
             Stack(
               children: [profile()],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Positioned(
@@ -56,7 +52,7 @@ class other extends StatelessWidget {
           Row(
             children: [
               Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.white,
                   border: Border(
                       left: BorderSide(
@@ -68,23 +64,23 @@ class other extends StatelessWidget {
                 height: 57,
                 child: Container(
                   height: 3,
-                  padding: EdgeInsets.only(top: 5, left: 10),
+                  padding: const EdgeInsets.only(top: 5, left: 10),
                   child: Column(
                     children: [
                       Container(
-                        padding: EdgeInsets.only(right: 100),
+                        padding: const EdgeInsets.only(right: 100),
                         child: Row(
                           children: [
                             Text(
                               title1,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 14, fontWeight: FontWeight.bold),
                             )
                           ],
                         ),
                       ),
                       Container(
-                        padding: EdgeInsets.only(left: 25),
+                        padding: const EdgeInsets.only(left: 25),
                         child: Row(children: [Text(data1)]),
                       )
                     ],
@@ -93,7 +89,7 @@ class other extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
         ],
@@ -103,7 +99,7 @@ class other extends StatelessWidget {
           Row(
             children: [
               Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.white,
                   border: Border(
                       left: BorderSide(
@@ -115,18 +111,18 @@ class other extends StatelessWidget {
                 height: 57,
                 child: Container(
                   height: 3,
-                  padding: EdgeInsets.only(top: 5, left: 10),
+                  padding: const EdgeInsets.only(top: 5, left: 10),
                   child: Row(
                     children: [
                       Column(
                         children: [
                           Container(
-                            padding: EdgeInsets.only(right: 100),
+                            padding: const EdgeInsets.only(right: 100),
                             child: Row(
                               children: [
                                 Text(
                                   title,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold),
                                 )
@@ -134,7 +130,7 @@ class other extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            padding: EdgeInsets.only(left: 5),
+                            padding: const EdgeInsets.only(left: 5),
                             child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [Text(data)]),
@@ -143,24 +139,25 @@ class other extends StatelessWidget {
                       ),
                       Container(
                         width: 170,
-                        padding: EdgeInsets.only(left: 50),
+                        padding: const EdgeInsets.only(left: 50),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Container(
+                                SizedBox(
                                   height: 24,
                                   width: 58,
                                   child: MaterialButton(
                                     elevation: 0,
-                                    color: Color.fromRGBO(159, 203, 114, 1),
+                                    color:
+                                        const Color.fromRGBO(159, 203, 114, 1),
                                     onPressed: () {},
                                     shape: RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(10)),
-                                    child: Text(
+                                    child: const Text(
                                       'แก้ไข',
                                       style: TextStyle(
                                           fontSize: 12,
@@ -180,7 +177,7 @@ class other extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
         ],
@@ -197,7 +194,7 @@ class other extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10), color: Colors.white),
               height: 123,
               width: 330,
-              child: Column(
+              child: const Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
@@ -231,7 +228,7 @@ class other extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
+          const Positioned(
             top: 16,
             left: 100,
             right: 100,

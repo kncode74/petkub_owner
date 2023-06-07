@@ -1,17 +1,15 @@
+import 'package:back_end/dogIn.dart';
 import 'package:back_end/user.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-class dog extends StatefulWidget {
-  const dog({super.key});
+class Dog extends StatefulWidget {
+  const Dog({super.key});
 
   @override
-  State<dog> createState() => _dogState();
+  State<Dog> createState() => _DogState();
 }
 
-class _dogState extends State<dog> {
+class _DogState extends State<Dog> {
   List<User> _users = [
     User('หมีน้อยสีช็อกโกแลต', 'images/mep.jpg', '6305879', false),
     User('หมีน้อยสีช็อกโกแลต', 'images/mep.jpg', '6305879', false),
@@ -25,39 +23,43 @@ class _dogState extends State<dog> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color.fromRGBO(83, 129, 36, 1),
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'ข้อมูลสุนัข',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.normal,
+        appBar: AppBar(
+          backgroundColor: const Color.fromRGBO(83, 129, 36, 1),
+          title: const Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'ข้อมูลสุนัข',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.normal,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
-      ),
-      body: Container(
-          padding: EdgeInsets.only(left: 20, right: 20),
+        body: Container(
+          padding: const EdgeInsets.only(left: 20, right: 20),
           color: Colors.white,
           height: double.infinity,
           width: double.infinity,
-          child: Container(
-            child: Stack(
-              children: [
-                Column(
-                  children: [
-                    search(),
-                  ],
-                ),
-                SizedBox(
-                  height: 40,
-                ),
-                Container(
-                  padding: EdgeInsets.only(top: 55),
+          child: Stack(
+            children: [
+              Column(
+                children: [
+                  search(),
+                ],
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => DogIn()));
+                },
+                child: Container(
+                  padding: const EdgeInsets.only(top: 55),
                   child: ListView.builder(
                     itemCount: _users.length,
                     itemBuilder: (context, index) {
@@ -68,11 +70,11 @@ class _dogState extends State<dog> {
                           isdelete: _users[index].isDelete);
                     },
                   ),
-                )
-              ],
-            ),
-          )),
-    );
+                ),
+              )
+            ],
+          ),
+        ));
   }
 
   userComponent({name, id, images, isdelete}) {
@@ -83,13 +85,13 @@ class _dogState extends State<dog> {
         children: [
           Row(
             children: [
-              Container(
+              SizedBox(
                 width: 63,
                 height: 63,
                 child: ClipRRect(
                   child: CircleAvatar(
                     radius: 100,
-                    backgroundColor: Color.fromRGBO(159, 203, 114, 1),
+                    backgroundColor: const Color.fromRGBO(159, 203, 114, 1),
                     child: CircleAvatar(
                       radius: 29,
                       backgroundImage: AssetImage(images),
@@ -97,7 +99,7 @@ class _dogState extends State<dog> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 15,
               ),
               Column(
@@ -105,14 +107,14 @@ class _dogState extends State<dog> {
                 children: [
                   Text(
                     name,
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
                         color: Color.fromRGBO(57, 57, 57, 1)),
                   ),
                   Row(
                     children: [
-                      Text(
+                      const Text(
                         'id:',
                         style: TextStyle(
                             fontSize: 14,
@@ -121,7 +123,7 @@ class _dogState extends State<dog> {
                       ),
                       Text(
                         id,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 14,
                           color: Color.fromRGBO(57, 57, 57, 1),
                           fontWeight: FontWeight.normal,
@@ -133,7 +135,7 @@ class _dogState extends State<dog> {
               )
             ],
           ),
-          Container(
+          SizedBox(
             height: 40,
             child: MaterialButton(
               elevation: 0,
@@ -147,7 +149,7 @@ class _dogState extends State<dog> {
                   borderRadius: BorderRadius.circular(10)),
               child: Text(
                 isdelete ? 'ลบออกแล้ว' : 'ลบออก',
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                 ),
@@ -161,20 +163,20 @@ class _dogState extends State<dog> {
 
   Widget search() => Container(
         height: 40,
-        margin: EdgeInsets.all(15),
+        margin: const EdgeInsets.all(15),
         child:
             //ค้นหา
             TextField(
-          style: TextStyle(color: Color.fromRGBO(229, 227, 227, 1)),
+          style: const TextStyle(color: Color.fromRGBO(229, 227, 227, 1)),
           decoration: InputDecoration(
             filled: true,
-            fillColor: Color.fromRGBO(229, 227, 227, 1),
-            contentPadding: EdgeInsets.all(0),
+            fillColor: const Color.fromRGBO(229, 227, 227, 1),
+            contentPadding: const EdgeInsets.all(0),
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(7),
                 borderSide: BorderSide.none),
             hintText: 'ค้นหา',
-            prefixIcon: Icon(Icons.search),
+            prefixIcon: const Icon(Icons.search),
           ),
         ),
       );
